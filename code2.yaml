@@ -176,8 +176,8 @@
       - '{{"\U0001F4A1"}} Увімкнути:/sonofflampswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff Slampher  -  1
-- id: '0000000000016'
-  alias: 016. Telegram - Relay - Sonoff Slampher (УВІМКНЕНО)
+- id: '0000000000008'
+  alias: 008. Telegram - Relay - Sonoff Slampher (УВІМКНЕНО)
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -202,8 +202,8 @@
       - '{{"\U0001F4A1"}} Вимкнути:/sonoffslampherswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff Slampher  -  2
-- id: '0000000000017'
-  alias: 017. Telegram - Relay - Sonoff Slampher (ВИМКНЕНО)
+- id: '0000000000009'
+  alias: 009. Telegram - Relay - Sonoff Slampher (ВИМКНЕНО)
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -228,8 +228,8 @@
       - '{{"\U0001F4A1"}} Увімкнути:/sonoffslampherswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff Slampher  -  3
-- id: 0000000000018
-  alias: 018. Telegram - Relay - Sonoff Slampher OFF-ON
+- id: 0000000000010
+  alias: 010. Telegram - Relay - Sonoff Slampher OFF-ON
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -262,8 +262,8 @@
       - '{{"\U0001F4A1"}} Вимкнути:/sonoffslampherswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff Slampher  -  4
-- id: 0000000000019
-  alias: 019. Telegram - Relay - Sonoff Slampher ON-OFF
+- id: 0000000000011
+  alias: 011. Telegram - Relay - Sonoff Slampher ON-OFF
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -295,9 +295,9 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Увімкнути:/sonoffslampherswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
-      
-- id: 0000000000008
-  alias: 008. Telegram - Relay - Sonoff TX (УВІМКНЕНО)
+#*************************************************************Sonoff TX  -  1
+- id: 0000000000012
+  alias: 012. Telegram - Relay - Sonoff TX (УВІМКНЕНО)
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -321,8 +321,9 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Вимкнути:/sonofftxswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
-- id: 0000000000009
-  alias: 009. Telegram - Relay - Sonoff TX (ВИМКНЕНО)
+#*************************************************************Sonoff TX  -  2
+- id: 0000000000013
+  alias: 013. Telegram - Relay - Sonoff TX (ВИМКНЕНО)
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -346,8 +347,9 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Увімкнути:/sonofftxswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
-- id: '0000000000010'
-  alias: 010. Telegram - Relay - Sonoff TX OFF-ON
+#*************************************************************Sonoff TX  -  3
+- id: '0000000000014'
+  alias: 014. Telegram - Relay - Sonoff TX OFF-ON
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -379,8 +381,9 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Вимкнути:/sonofftxswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
-- id: '0000000000011'
-  alias: 011. Telegram - Relay - Sonoff TX ON-OFF
+#*************************************************************Sonoff TX  -  4
+- id: '0000000000015'
+  alias: 015. Telegram - Relay - Sonoff TX ON-OFF
   trigger:
   - platform: event
     event_type: telegram_callback
