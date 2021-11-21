@@ -175,6 +175,243 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Увімкнути:/sonofflampswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Sonoff Slampher  -  1
+- id: '0000000000016'
+  alias: 016. Telegram - Relay - Sonoff Slampher (УВІМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffslampher
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_1001110337
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff Slampher
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffslampherswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Sonoff Slampher  -  2
+- id: '0000000000017'
+  alias: 017. Telegram - Relay - Sonoff Slampher (ВИМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffslampher
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_1001110337
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff Slampher
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffslampherswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Sonoff Slampher  -  3
+- id: 0000000000018
+  alias: 018. Telegram - Relay - Sonoff Slampher OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffslampherswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_1001110337
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_1001110337
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff Slampher
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffslampherswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Sonoff Slampher  -  4
+- id: 0000000000019
+  alias: 019. Telegram - Relay - Sonoff Slampher ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffslampherswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_1001110337
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_1001110337
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff Slampher
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffslampherswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+      
+- id: 0000000000008
+  alias: 008. Telegram - Relay - Sonoff TX (УВІМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonofftx
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100126a230
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff TX
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonofftxswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: 0000000000009
+  alias: 009. Telegram - Relay - Sonoff TX (ВИМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonofftx
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100126a230
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff TX
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonofftxswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000010'
+  alias: 010. Telegram - Relay - Sonoff TX OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonofftxswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100126a230
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_100126a230
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff TX
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonofftxswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000011'
+  alias: 011. Telegram - Relay - Sonoff TX ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonofftxswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100126a230
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_100126a230
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff TX
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonofftxswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
       
       
       
