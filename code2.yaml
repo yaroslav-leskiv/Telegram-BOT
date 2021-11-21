@@ -1,1 +1,40 @@
-1
+#############################################################Панель керування  -  /start
+- id: '0000000000001'
+  alias: 001. Telegram - Панель керування - start
+  initial_state: true
+  trigger:
+    platform: event
+    event_type: telegram_command
+    event_data:
+      command: /start
+  action:
+  - service: telegram_bot.send_message
+    data_template:
+      target: '{{ trigger.event.data.user_id }}'
+      message: Панель керування
+      inline_keyboard:
+      - '{{"\U000026A1"}} Реле:/relay, {{"\U0001F3A8"}} Сцени:/scenes, {{"\U0001F4CD"}}
+        Датчики:/sensors'
+      - '{{"\U000026C5"}} Погода:/weather, {{"\U0001F6E1"}} Сигналізація:/arm'
+      - '{{"\U00002139"}} Система:/system'
+#############################################################Панель керування  -  /return
+- id: '0000000000002'
+  alias: 002. Telegram - Панель керування - return
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /return
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: Панель керування
+      data:
+      inline_keyboard:
+      - '{{"\U000026A1"}} Реле:/relay, {{"\U0001F3A8"}} Сцени:/scenes, {{"\U0001F4CD"}}
+        Датчики:/sensors'
+      - '{{"\U000026C5"}} Погода:/weather, {{"\U0001F6E1"}} Сигналізація:/arm'
+      - '{{"\U00002139"}} Система:/system'
+      
