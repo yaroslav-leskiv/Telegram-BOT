@@ -228,7 +228,7 @@
       - '{{"\U0001F4A1"}} Увімкнути:/sonoffslampherswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff Slampher  -  3
-- id: 0000000000010
+- id: '0000000000010'
   alias: 010. Telegram - Relay - Sonoff Slampher OFF-ON
   trigger:
   - platform: event
@@ -262,7 +262,7 @@
       - '{{"\U0001F4A1"}} Вимкнути:/sonoffslampherswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff Slampher  -  4
-- id: 0000000000011
+- id: '0000000000011'
   alias: 011. Telegram - Relay - Sonoff Slampher ON-OFF
   trigger:
   - platform: event
@@ -296,7 +296,7 @@
       - '{{"\U0001F4A1"}} Увімкнути:/sonoffslampherswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff TX  -  1
-- id: 0000000000012
+- id: '0000000000012'
   alias: 012. Telegram - Relay - Sonoff TX (УВІМКНЕНО)
   trigger:
   - platform: event
@@ -322,7 +322,7 @@
       - '{{"\U0001F4A1"}} Вимкнути:/sonofftxswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff TX  -  2
-- id: 0000000000013
+- id: '0000000000013'
   alias: 013. Telegram - Relay - Sonoff TX (ВИМКНЕНО)
   trigger:
   - platform: event
@@ -468,7 +468,7 @@
       - '{{"\U0001F4A1"}} Увімкнути:/sonoffrfswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff RF  -  3
-- id: 0000000000018
+- id: '0000000000018'
   alias: 018. Telegram - Relay - Sonoff RF OFF-ON
   trigger:
   - platform: event
@@ -502,7 +502,7 @@
       - '{{"\U0001F4A1"}} Вимкнути:/sonoffrfswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff RF  -  4
-- id: 0000000000019
+- id: '0000000000019'
   alias: 019. Telegram - Relay - Sonoff RF ON-OFF
   trigger:
   - platform: event
@@ -776,7 +776,7 @@
       - '{{"\U0001F4A1"}} Увімкнути:/sonoffpowswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff S26  -  1
-- id: 0000000000028
+- id: '0000000000028'
   alias: 028. Telegram - Relay - Sonoff S26 (УВІМКНЕНО)
   trigger:
   - platform: event
@@ -802,7 +802,7 @@
       - '{{"\U0001F4A1"}} Вимкнути:/sonoffs26switch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************Sonoff S26  -  2
-- id: 0000000000029
+- id: '0000000000029'
   alias: 029. Telegram - Relay - Sonoff S26 (ВИМКНЕНО)
   trigger:
   - platform: event
@@ -1217,7 +1217,7 @@
       - '{{"\U0001F7E2"}}Увімкнути:/bright1on'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
 #*************************************************************М'яко  -  1
-- id: 0000000000044
+- id: '0000000000044'
   alias: 044. Telegram - Scene - М'ЯКО
   trigger:
   - platform: event
@@ -1239,7 +1239,7 @@
       - '{{"\U0001F534"}} Вимкнути:/bright2off, {{"\U0001F7E2"}} Увімкнути:/bright2on'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
 #*************************************************************М'яко  -  2
-- id: 0000000000045
+- id: '0000000000045'
   alias: 045. Telegram - Scene - М'ЯКО ON
   trigger:
   - platform: event
@@ -1455,7 +1455,7 @@
       - '{{"\U0001F534"}} Вимкнути:/sleepoff, {{"\U0001F7E2"}} Увімкнути:/sleepon'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
 #*************************************************************Сон  -  2
-- id: 0000000000054
+- id: '0000000000054'
   alias: 054. Telegram - Scene - СОН ON
   trigger:
   - platform: event
@@ -1480,7 +1480,7 @@
       - '{{"\U0001F534"}}Вимкнути:/sleepoff'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
 #*************************************************************Сон  -  3
-- id: 0000000000055
+- id: '0000000000055'
   alias: 055. Telegram - Scene - СОН OFF
   trigger:
   - platform: event
@@ -1696,7 +1696,7 @@
       - '{{"\U0001F534"}}Вимкнути:/partyoff'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
 #*************************************************************Вечірка  -  3
-- id: 0000000000064
+- id: '0000000000064'
   alias: 064. Telegram - Scene - ВЕЧІРКА OFF
   trigger:
   - platform: event
@@ -1753,7 +1753,7 @@
       inline_keyboard:
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
 #*************************************************************Датчики  -  2
-- id: 0000000000066
+- id: '0000000000066'
   alias: 066. Telegram - Датчики - 2
   trigger:
     platform: event
