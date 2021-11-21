@@ -1015,8 +1015,8 @@
       - '{{"\U0001F4A1"}} Увімкнути:/hochswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************ESP клапан  -  1
-- id: '0000000000040'
-  alias: 040. Telegram - Relay - ESP клапан (УВІМКНЕНО)
+- id: '0000000000036'
+  alias: 036. Telegram - Relay - ESP клапан (УВІМКНЕНО)
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -1041,8 +1041,8 @@
       - '{{"\U0001F4A1"}} Вимкнути:/espvalveswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************ESP клапан  -  2
-- id: '0000000000041'
-  alias: 041. Telegram - Relay - ESP клапан (ВИМКНЕНО)
+- id: '0000000000037'
+  alias: 037. Telegram - Relay - ESP клапан (ВИМКНЕНО)
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -1067,8 +1067,8 @@
       - '{{"\U0001F4A1"}} Увімкнути:/espvalveswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************ESP клапан  -  3
-- id: '0000000000042'
-  alias: 042. Telegram - Relay - ESP клапан OFF-ON
+- id: '0000000000038'
+  alias: 038. Telegram - Relay - ESP клапан OFF-ON
   trigger:
   - platform: event
     event_type: telegram_callback
@@ -1096,8 +1096,8 @@
       - '{{"\U0001F4A1"}} Вимкнути:/espvalveswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
 #*************************************************************ESP клапан  -  4
-- id: '0000000000043'
-  alias: 043. Telegram - Relay - ESP клапан ON-OFF
+- id: '0000000000039'
+  alias: 039. Telegram - Relay - ESP клапан ON-OFF
   trigger:
   - platform: event
     event_type: telegram_callback
