@@ -801,6 +801,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Вимкнути:/sonoffs26switch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Sonoff S26  -  2
 - id: 0000000000029
   alias: 029. Telegram - Relay - Sonoff S26 (ВИМКНЕНО)
   trigger:
@@ -825,7 +826,7 @@
         '
       inline_keyboard:
       - '{{"\U0001F4A1"}} Увімкнути:/sonoffs26switch'
-      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Sonoff S26  -  3
 - id: '0000000000030'
   alias: 030. Telegram - Relay - Sonoff S26 OFF-ON
   trigger:
@@ -859,6 +860,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Вимкнути:/sonoffs26switch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Sonoff S26  -  4
 - id: '0000000000031'
   alias: 031. Telegram - Relay - Sonoff S26 ON-OFF
   trigger:
@@ -892,6 +894,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Увімкнути:/sonoffs26switch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Автомат HOCH  -  1
 - id: '0000000000032'
   alias: 032. Telegram - Relay - Автомат HOCH (УВІМКНЕНО)
   trigger:
@@ -917,6 +920,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Вимкнути:/hochswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Автомат HOCH  -  2
 - id: '0000000000033'
   alias: 033. Telegram - Relay - Автомат HOCH (ВИМКНЕНО)
   trigger:
@@ -942,6 +946,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Увімкнути:/hochswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Автомат HOCH  -  3
 - id: '0000000000034'
   alias: 034. Telegram - Relay - Автомат HOCH OFF-ON
   trigger:
@@ -975,6 +980,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Вимкнути:/hochswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************Автомат HOCH  -  4
 - id: '0000000000035'
   alias: 035. Telegram - Relay - Автомат HOCH ON-OFF
   trigger:
@@ -1008,6 +1014,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Увімкнути:/hochswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************ESP клапан  -  1
 - id: '0000000000040'
   alias: 040. Telegram - Relay - ESP клапан (УВІМКНЕНО)
   trigger:
@@ -1033,6 +1040,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Вимкнути:/espvalveswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************ESP клапан  -  2
 - id: '0000000000041'
   alias: 041. Telegram - Relay - ESP клапан (ВИМКНЕНО)
   trigger:
@@ -1058,6 +1066,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Увімкнути:/espvalveswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************ESP клапан  -  3
 - id: '0000000000042'
   alias: 042. Telegram - Relay - ESP клапан OFF-ON
   trigger:
@@ -1086,6 +1095,7 @@
       inline_keyboard:
       - '{{"\U0001F4A1"}} Вимкнути:/espvalveswitch'
       - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+#*************************************************************ESP клапан  -  4
 - id: '0000000000043'
   alias: 043. Telegram - Relay - ESP клапан ON-OFF
   trigger:
