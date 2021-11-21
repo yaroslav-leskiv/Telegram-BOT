@@ -1,0 +1,1708 @@
+
+- id: '0000000000020'
+  alias: 020. Telegram - Relay - Sonoff TH10 (УВІМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffth10
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_1001191141
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff TH10
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffth10switch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000021'
+  alias: 021. Telegram - Relay - Sonoff TH10 (ВИМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffth10
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_1001191141
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff TH10
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffth10switch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000022'
+  alias: 022. Telegram - Relay - Sonoff TH10 OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffth10switch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_1001191141
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_1001191141
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff TH10
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffth10switch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000023'
+  alias: 023. Telegram - Relay - Sonoff TH10 ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffth10switch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_1001191141
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_1001191141
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff TH10
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffth10switch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000024'
+  alias: 024. Telegram - Relay - Sonoff POW (УВІМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffpow
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100123a8f5
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff POW
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffpowswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000025'
+  alias: 025. Telegram - Relay - Sonoff POW (ВИМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffpow
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100123a8f5
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff POW
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffpowswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000026'
+  alias: 026. Telegram - Relay - Sonoff POW OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffpowswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100123a8f5
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_100123a8f5
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff POW
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffpowswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000027'
+  alias: 027. Telegram - Relay - Sonoff POW ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffpowswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100123a8f5
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_100123a8f5
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff POW
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffpowswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: 0000000000028
+  alias: 028. Telegram - Relay - Sonoff S26 (УВІМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffs26
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10012f55e3
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff S26
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffs26switch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: 0000000000029
+  alias: 029. Telegram - Relay - Sonoff S26 (ВИМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffs26
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10012f55e3
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff S26
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffs26switch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000030'
+  alias: 030. Telegram - Relay - Sonoff S26 OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffs26switch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10012f55e3
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10012f55e3
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff S26
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffs26switch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000031'
+  alias: 031. Telegram - Relay - Sonoff S26 ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffs26switch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10012f55e3
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10012f55e3
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff S26
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffs26switch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000032'
+  alias: 032. Telegram - Relay - Автомат HOCH (УВІМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /hoch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011a9e93
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Автомат HOCH
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/hochswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000033'
+  alias: 033. Telegram - Relay - Автомат HOCH (ВИМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /hoch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011a9e93
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Автомат HOCH
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/hochswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000034'
+  alias: 034. Telegram - Relay - Автомат HOCH OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /hochswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011a9e93
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10011a9e93
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Автомат HOCH
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/hochswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000035'
+  alias: 035. Telegram - Relay - Автомат HOCH ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /hochswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011a9e93
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10011a9e93
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Автомат HOCH
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/hochswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000036'
+  alias: 036. Telegram - Relay - Sonoff RF (УВІМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffrf
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011697d5
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff RF R3
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffrfswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000037'
+  alias: 037. Telegram - Relay - Sonoff RF (ВИМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffrf
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011697d5
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff RF R3
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffrfswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: 0000000000038
+  alias: 038. Telegram - Relay - Sonoff RF OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffrfswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011697d5
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10011697d5
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff RF R3
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/sonoffrfswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: 0000000000039
+  alias: 039. Telegram - Relay - Sonoff RF ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sonoffrfswitch
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011697d5
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10011697d5
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Sonoff RF R3
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/sonoffrfswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000040'
+  alias: 040. Telegram - Relay - ESP клапан (УВІМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /espvalve
+  condition:
+  - condition: state
+    entity_id: switch.valve
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} ESP клапан
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/espvalveswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000041'
+  alias: 041. Telegram - Relay - ESP клапан (ВИМКНЕНО)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /espvalve
+  condition:
+  - condition: state
+    entity_id: switch.valve
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} ESP клапан
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/espvalveswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000042'
+  alias: 042. Telegram - Relay - ESP клапан OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /espvalveswitch
+  condition:
+  - condition: state
+    entity_id: switch.valve
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.valve
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} ESP клапан
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Вимкнути:/espvalveswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000043'
+  alias: 043. Telegram - Relay - ESP клапан ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /espvalveswitch
+  condition:
+  - condition: state
+    entity_id: switch.valve
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.valve
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} ESP клапан
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F4A1"}} Увімкнути:/espvalveswitch'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/relay'
+- id: '0000000000044'
+  alias: 044. Telegram - Scenes
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /scenes
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: 'Виберіть сцену:'
+      inline_keyboard:
+      - '{{''🎨''}} Яскраво:/bright1, {{''🎨''}} М''яко:/bright2, {{''🎨''}} Тьмяно:/bright3'
+      - '{{"\U0001F3A8"}} Ніч:/night,  {{"\U0001F3A8"}} Сон:/sleep'
+      - '{{"\U0001F3A8"}} Читання:/reading,{{"\U0001F3A8"}} Кінотеатр:/cinema, {{"\U0001F3A8"}}
+        Вечірка:/party'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: '0000000000045'
+  alias: 045. Telegram - Scene - Яскраво
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright1
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ЯСКРАВО
+
+
+        {{"\U000025B6"}} Виберіть дію:
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}} Вимкнути:/bright1off, {{"\U0001F7E2"}} Увімкнути:/bright1on'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000046'
+  alias: 046. Telegram - Scene - ЯСКРАВО ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright1on
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.ctsena_iaskravo
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ЯСКРАВО
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}}Вимкнути:/bright1off'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000047'
+  alias: 047. Telegram - Scene - ЯСКРАВО OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright1off
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_light_off
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ЯСКРАВО
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F7E2"}}Увімкнути:/bright1on'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: 0000000000048
+  alias: 048. Telegram - Scene - М'ЯКО
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright2
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{''▶''}} Сцена - М''ЯКО
+
+
+        {{''▶''}} Виберіть дію:
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}} Вимкнути:/bright2off, {{"\U0001F7E2"}} Увімкнути:/bright2on'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: 0000000000049
+  alias: 049. Telegram - Scene - М'ЯКО ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright2on
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.stsena_m_iako
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{''▶''}} Сцена - М''ЯКО
+
+
+        {{''▶''}} Поточний стан  -  {{''🟢''}}УВІМКНЕНО{{''🟢''}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}}Вимкнути:/bright2off'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000050'
+  alias: 050. Telegram - Scene - М'ЯКО OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright2off
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_light_off
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{''▶''}} Сцена - М''ЯКО
+
+
+        {{''▶''}} Поточний стан  -  {{''🔴''}}ВИМКНЕНО{{''🔴''}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F7E2"}}Увімкнути:/bright2on'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000051'
+  alias: 051. Telegram - Scene - ТЬМЯНО
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright3
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ТЬМЯНО
+
+
+        {{"\U000025B6"}} Виберіть дію:
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}} Вимкнути:/bright3off, {{"\U0001F7E2"}} Увімкнути:/bright3on'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000052'
+  alias: 052. Telegram - Scene - ТЬМЯНО ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright3on
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.stsena_tmiano
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ТЬМЯНО
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}}Вимкнути:/bright3off'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000053'
+  alias: 053. Telegram - Scene - ТЬМЯНО OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /bright3off
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_light_off
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ТЬМЯНО
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F7E2"}}Увімкнути:/bright3on'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000054'
+  alias: 054. Telegram - Scene - НІЧ
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /night
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - НІЧ
+
+
+        {{"\U000025B6"}} Виберіть дію:
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}} Вимкнути:/nightoff, {{"\U0001F7E2"}} Увімкнути:/nighton'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000055'
+  alias: 055. Telegram - Scene - НІЧ ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /nighton
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.stsena_nich
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - НІЧ
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}}Вимкнути:/nightoff'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000056'
+  alias: 056. Telegram - Scene - НІЧ OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /nightoff
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_light_off
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - НІЧ
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F7E2"}}Увімкнути:/nighton'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000057'
+  alias: 057. Telegram - Scene - СОН
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sleep
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - СОН
+
+
+        {{"\U000025B6"}} Виберіть дію:
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}} Вимкнути:/sleepoff, {{"\U0001F7E2"}} Увімкнути:/sleepon'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: 0000000000058
+  alias: 058. Telegram - Scene - СОН ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sleepon
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.stsena_son
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - СОН
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}}Вимкнути:/sleepoff'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: 0000000000059
+  alias: 059. Telegram - Scene - СОН OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sleepoff
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_light_off
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - СОН
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F7E2"}}Увімкнути:/sleepon'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000060'
+  alias: 060. Telegram - Scene - ЧИТАННЯ
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /reading
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ЧИТАННЯ
+
+
+        {{"\U000025B6"}} Виберіть дію:
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}} Вимкнути:/readingoff, {{"\U0001F7E2"}} Увімкнути:/readingon'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000061'
+  alias: 061. Telegram - Scene - ЧИТАННЯ ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /readingon
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.stsena_chitannia
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ЧИТАННЯ
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}}Вимкнути:/readingoff'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000062'
+  alias: 062. Telegram - Scene - ЧИТАННЯ OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /readingoff
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_light_off
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ЧИТАННЯ
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F7E2"}}Увімкнути:/readingon'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000063'
+  alias: 063. Telegram - Scene - КІНОТЕАТР
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /cinema
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - КІНОТЕАТР
+
+
+        {{"\U000025B6"}} Виберіть дію:
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}} Вимкнути:/cinemaoff, {{"\U0001F7E2"}} Увімкнути:/cinemaon'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000064'
+  alias: 064. Telegram - Scene - КІНОТЕАТР ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /cinemaon
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.stsena_kinoteatr
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - КІНОТЕАТР
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}}Вимкнути:/cinemaoff'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000065'
+  alias: 065. Telegram - Scene - КІНОТЕАТР OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /cinemaoff
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_light_off
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - КІНОТЕАТР
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F7E2"}}Увімкнути:/cinemaon'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000066'
+  alias: 066. Telegram - Scene - ВЕЧІРКА
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /party
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ВЕЧІРКА
+
+
+        {{"\U000025B6"}} Виберіть дію:
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}} Вимкнути:/partyoff, {{"\U0001F7E2"}} Увімкнути:/partyon'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000067'
+  alias: 067. Telegram - Scene - ВЕЧІРКА ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /partyon
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.stsena_vechirka
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ВЕЧІРКА
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНО{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F534"}}Вимкнути:/partyoff'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: 0000000000068
+  alias: 068. Telegram - Scene - ВЕЧІРКА OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /partyoff
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.all_light_off
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Сцена - ВЕЧІРКА
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F534"}}ВИМКНЕНО{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F7E2"}}Увімкнути:/partyon'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/scenes'
+- id: '0000000000070'
+  alias: 070. Telegram - Arm - ОХОРОНА
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /arm
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_away
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U0001F6E1"}} Сигналізація
+         
+          
+         
+        {{"\U000025B6"}} Поточний стан :
+        
+        {{"\U0001F534"}}ОХОРОНА{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{''🟢''}} Зняти з охорони:/alarmoff, {{"\U0001F6A8"}} Сирена:/alarms'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: '0000000000071'
+  alias: 071. Telegram - Arm - ЗНЯТО З ОХОРОНИ
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /arm
+  condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: disarmed
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U0001F6E1"}} Сигналізація
+         
+          
+         
+        {{"\U000025B6"}} Поточний стан:
+        
+        {{''🟢''}}ЗНЯТО З ОХОРОНИ{{''🟢''}}
+
+        '
+      inline_keyboard:
+      - '{{''🔴''}} Поставити на охорону:/alarmon, {{"\U0001F6A8"}} Сирена:/alarms'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: '0000000000072'
+  alias: 072. Telegram - Arm - ВСТАНОВЛЕННЯ ОХОРОНИ
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /alarmon
+  action:
+  - service: alarm_control_panel.alarm_arm_away
+    target:
+      entity_id: alarm_control_panel.home_alarm
+    data:
+      code: '1111'
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U0001F6E1"}} Сигналізація
+         
+          
+         
+        {{"\U000025B6"}} Поточний стан :
+        
+        {{"\U0001F534"}}ОХОРОНА{{"\U0001F534"}}
+
+        '
+      inline_keyboard:
+      - '{{''🟢''}} Зняти з охорони:/alarmoff, {{"\U0001F6A8"}} Сирена:/alarms'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: '0000000000073'
+  alias: 073. Telegram - Arm - ЗНЯТТЯ ОХОРОНИ
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /alarmoff
+  action:
+  - service: alarm_control_panel.alarm_disarm
+    target:
+      entity_id: alarm_control_panel.home_alarm
+    data:
+      code: '1111'
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U0001F6E1"}} Сигналізація
+         
+          
+         
+        {{"\U000025B6"}} Поточний стан:
+        
+        {{''🟢''}}ЗНЯТО З ОХОРОНИ{{''🟢''}}
+
+        '
+      inline_keyboard:
+      - '{{''🔴''}} Поставити на охорону:/alarmon, {{"\U0001F6A8"}} Сирена:/alarms'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: '0000000000074'
+  alias: 074. Telegram - Arm - СИРЕНА (УВІМКНЕНА)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /alarms
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011a9e93
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U0001F6A8"}} Сирена
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"\U0001F7E2"}}УВІМКНЕНА{{"\U0001F7E2"}}
+
+        '
+      inline_keyboard:
+      - '{{''🟢''}} Вимкнути:/alarmsoff'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/arm'
+- id: '0000000000075'
+  alias: 075. Telegram - Arm - Сирена (ВИМКНЕНА)
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /alarms
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011a9e93
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U0001F6A8"}} Сирена
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{''🟢''}}ВИМКНЕНА{{''🟢''}}
+
+        '
+      inline_keyboard:
+      - '{{"🔴"}} Увімкнути:/alarmson'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/arm'
+- id: '0000000000076'
+  alias: 076. Telegram - Arm - Сирена OFF-ON
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /alarmson
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011a9e93
+    state: 'off'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10011a9e93
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U0001F6A8"}} Сирена
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{"🔴"}}УВІМКНЕНА{{"🔴"}}
+
+        '
+      inline_keyboard:
+      - '{{''🟢''}} Вимкнути:/alarmsoff'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/arm'
+- id: '0000000000077'
+  alias: 077. Telegram - Relay - Сирена ON-OFF
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /alarmsoff
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_10011a9e93
+    state: 'on'
+  action:
+  - service: switch.toggle
+    target:
+      entity_id: switch.sonoff_10011a9e93
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 1
+      milliseconds: 0
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U0001F6A8"}} Сирена
+
+
+        {{"\U000025B6"}} Поточний стан  -  {{''🟢''}}ВИМКНЕНА{{''🟢''}}
+
+        '
+      inline_keyboard:
+      - '{{"🔴"}} Увімкнути:/alarmson'
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/arm'
+- id: '0000000000078'
+  alias: 078. Telegram - СИСТЕМА
+  trigger:
+  - platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /system
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Поточний стан {{"\U000025C0"}}
+
+
+
+        {{"\U00002139"}} Система:
+
+         
+
+        Використання процесора - {{ states(''sensor.processor_use'') }}%
+
+        Використання ОЗП - {{ states(''sensor.memory_use_percent'') }}%
+
+        Використано пам''яті - {{ states(''sensor.disk_use_percent'') }}%
+
+        База даних Home Assistant - {{ states(''sensor.home_assistant_v2_db'') }} МБ
+
+        Залишилось вільної пам''яті - {{ states(''sensor.disk_free'') }} ГБ
+
+
+
+        {{"\U0001F4F6"}} NodeMcu:
+
+         
+
+        SSID - [{{ states(''sensor.esp_network_name'') }}]
+
+        IP адреса - {{ states(''sensor.esp_network_ip'') }}
+
+        MAC адреса - {{ states(''sensor.esp_mac'') }}
+
+
+
+        {{"\U0001F4F6"}} Тест інтернет швидкості:
+
+         
+
+        Швидкість завантаження - {{ states(''sensor.speedtest_download'') }} Мбіт/с
+
+        Швидкість відвантаження - {{ states(''sensor.speedtest_upload'') }} Мбіт/с
+
+        Пінг - {{ states(''sensor.speedtest_ping'') }} мс.
+
+        '
+      inline_keyboard:
+      - '{{"\U0001F501"}} Перезавантажити:/reboot, {{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: '0000000000005'
+  alias: 005. Telegram - Поточний стан
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sysinfo
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Поточний стан {{"\U000025C0"}}
+
+
+
+        {{"\U00002139"}} Система:
+
+         
+
+        Використання процесора - {{ states(''sensor.processor_use'') }}%
+
+        Використання ОЗП - {{ states(''sensor.memory_use_percent'') }}%
+
+        Використано пам''яті - {{ states(''sensor.disk_use_percent'') }}%
+
+        База даних Home Assistant - {{ states(''sensor.home_assistant_v2_db'') }} МБ
+
+        Залишилось вільної пам''яті - {{ states(''sensor.disk_free'') }} ГБ
+
+
+
+        {{"\U0001F4F6"}} NodeMcu:
+
+         
+
+        SSID - [{{ states(''sensor.esp_network_name'') }}]
+
+        IP адреса - {{ states(''sensor.esp_network_ip'') }}
+
+        MAC адреса - {{ states(''sensor.esp_mac'') }}
+
+
+
+        {{"\U0001F4F6"}} Тест інтернет швидкості:
+
+         
+
+        Швидкість завантаження - {{ states(''sensor.speedtest_download'') }} Мбіт/с
+
+        Швидкість відвантаження - {{ states(''sensor.speedtest_upload'') }} Мбіт/с
+
+        Пінг - {{ states(''sensor.speedtest_ping'') }} мс.
+
+        '
+      inline_keyboard:
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return, {{ "\u21a9\ufe0f" }} Назад:/system'
+- id: '0000000000006'
+  alias: 006. Telegram - Датчики
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sensors
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100123a8f5
+    state: 'off'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Показники з датчиків {{"\U000025C0"}}
+
+
+        {{"\U000026A1"}} Напруга в мережі  -  {{ state_attr(''switch.sonoff_100123a8f5'',
+        ''voltage'') }}В
+
+        {{"\U0001F321"}} Температура повітря  -  {{ state_attr(''switch.sonoff_1001191141'',
+        ''temperature'') }}°C
+
+        {{"\U0001F32B"}} Вологість повітря  -  {{ state_attr(''switch.sonoff_1001191141'',
+        ''humidity'') }}%
+
+        '
+      inline_keyboard:
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: 0000000000069
+  alias: 069. Telegram - Датчики - 2
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /sensors
+  condition:
+  - condition: state
+    entity_id: switch.sonoff_100123a8f5
+    state: 'on'
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: '{{"\U000025B6"}} Показники з датчиків {{"\U000025C0"}}
+
+          
+
+        {{"\U000026A1"}} Потужність  -  {{ state_attr(''switch.sonoff_100123a8f5'',
+        ''power'') }}Вт
+
+        {{"\U000026A1"}} Сила струму  -  {{ state_attr(''switch.sonoff_100123a8f5'',
+        ''current'') }}А
+
+        {{"\U000026A1"}} Напруга в мережі  -  {{ state_attr(''switch.sonoff_100123a8f5'',
+        ''voltage'') }}В
+
+        {{"\U0001F321"}} Температура повітря  -  {{ state_attr(''switch.sonoff_1001191141'',
+        ''temperature'') }}°C
+
+        {{"\U0001F32B"}} Вологість повітря  -  {{ state_attr(''switch.sonoff_1001191141'',
+        ''humidity'') }}%
+
+        '
+      inline_keyboard:
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: '0000000000007'
+  alias: 007. Telegram - Погода
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /weather
+  action:
+  - service: telegram_bot.edit_message
+    data_template:
+      message_id: last
+      chat_id: '{{ trigger.event.data.user_id }}'
+      message: "{{\"\\U0001F3E0\"}} Прогноз погоди
+        
+         
+        
+        {{\"\\U0001F321\"}} Температура - {{ states('sensor.openweathermap_temperature')\
+        \ }}°C\n{{\"\\U0001F32B\"}} Вологість - {{ states('sensor.openweathermap_humidity')\
+        \ }}%\n{{\"\\U0001F4AA\"}} Тиск - {{ (states('sensor.openweathermap_pressure')|float\
+        \ * 0.7500637)|round(2) }} мм рт. ст\n{{\"\\U00002600\"}} Погода - {{ states('sensor.openweathermap_weather')\
+        \ }}\n{{\"\\U00002B50\"}} Прогноз на сьогодні - {{ states('sensor.openweathermap_forecast_temperature')\
+        \ }}°C\n{{\"\\U0001F327\"}} Прогноз дощу - {{ states('sensor.openweathermap_rain')\
+        \ }}\n{{\"\\U0001F328\"}} Прогноз снігу - {{ states('sensor.openweathermap_snow')\
+        \ }}  \n"
+      inline_keyboard:
+      - '{{ "\u21a9\ufe0f" }} Панель керування:/return'
+- id: '1636218736739'
+  alias: Telegram - Reboot HA
+  description: ''
+  trigger:
+    platform: event
+    event_type: telegram_callback
+    event_data:
+      data: /reboot
+  action:
+  - service: homeassistant.restart
+  mode: single
