@@ -4,6 +4,4 @@ Telegram BOT for IoT system.
 
 ![Windows Telegram BOT](https://user-images.githubusercontent.com/61146340/149678843-35faabb1-f284-47ae-b09f-67c93d041873.png)
 
-![Control panel Telegram Android](https://user-images.githubusercontent.com/61146340/149678923-7a47a6eb-cc89-4f3d-a285-b0e3725e53f7.png) ![System Telegram Android](https://user-images.githubusercontent.com/61146340/149678981-86a29112-d34c-430f-bb6a-bd8f7d9e9691.png)
-
-
+![image 1](https://user-images.githubusercontent.com/61146340/149679126-2f238097-7a17-478a-845b-93702f702113.png)
