@@ -1,8 +1,7 @@
 # Telegram-BOT
 Telegram BOT for IoT system.
 
-
-![Windows Telegram BOT](https://user-images.githubusercontent.com/61146340/149678843-35faabb1-f284-47ae-b09f-67c93d041873.png)
+![Windows Telegram BOT](https://user-images.githubusercontent.com/61146340/149679748-61776973-b3cf-45a3-be1e-73729ee4009f.png)
 
 ![image 1](https://user-images.githubusercontent.com/61146340/149679410-40b8875f-43af-4bb4-a9a7-40ff65501cc7.png)
 
